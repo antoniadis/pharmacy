@@ -1,0 +1,261 @@
+@import "config";
+@import "menu";
+
+html {
+  font-size: 10px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  @include background;
+  background: $primary-color;
+  color: set-text-color($primary-color);
+  height: 100%;
+  margin: 0%;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.5;
+}
+
+// Headings
+h1,
+h2,
+h3 {
+  margin: 0;
+  font-weight: 400;
+
+  &.lg-heading {
+    // font-size: 6rem;
+  }
+
+  &.sm-heading {
+    display: inline-block;
+    // font-size: 6rem;
+    margin-top: 1rem;
+    // margin-bottom: 1rem;
+    padding: 0.2rem 1rem;
+    background: rgba(lighten($primary-color, 7), 0.5);
+  }
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
+header {
+  position: fixed;
+  z-index: 2;
+  width: 100%;
+}
+
+.text-secondary {
+  color: $secondary-color;
+}
+
+main {
+  padding: 4rem;
+  //height: 100%;
+  min-height: calc(100vh - 35px);
+
+  .icons {
+    margin-top: 1rem;
+
+    a {
+      padding: 0.4rem;
+
+      &:hover {
+        color: $secondary-color;
+        @include easeOut;
+      }
+    }
+  }
+
+  .responsive {
+    width: 95%;
+    height: auto;
+    // margin-top: 2.5rem;
+  }
+
+  &#home {
+    overflow: hidden; // no scrollbars on the main page
+
+    h1 {
+      // margin-top: 20vh;
+    }
+
+    .about-info {
+      display: grid;
+      grid-gap: 30px;
+      grid-template-areas: "bioimage job";
+      id-template-columns: repeat(3, 1fr);
+
+      .job {
+        background: lighten($primary-color, 30);
+        background: transparent\9;
+        background: rgba(0, 0, 0, 0.4);
+
+        padding: 0.5rem;
+        border-bottom: $secondary-color 5px solid;
+        opacity: unit($number: 50);
+
+        font-size: 1.5rem;
+
+        &.extra-grey {
+          background: lighten($primary-color, 30);
+          background: transparent\9;
+          background: rgba(0, 0, 0, 0.6);
+
+          padding: 0.5rem;
+          border-bottom: $secondary-color 5px solid;
+          opacity: unit($number: 50);
+
+          font-size: 1.5rem;
+        }
+      }
+    }
+  }
+}
+
+.about-info {
+  display: grid;
+  grid-gap: 30px;
+  grid-template-areas:
+    "bioimage job1"
+    "job2 job3"
+    "job4 job5";
+  // grid-template-columns: 60px auto;
+
+  .bio-image {
+    grid-area: bioimage;
+    margin: auto;
+    border-radius: 50%;
+    border: 3px solid;
+  }
+
+  // .bio {
+  //   grid-area: bio;
+  //   font-size: 1.5rem;
+  // }
+
+  .job-1 {
+    grid-area: job1;
+  }
+
+  .job-2 {
+    grid-area: job2;
+    border-bottom: $secondary-color 5px solid;
+  }
+
+  .job-3 {
+    grid-area: job3;
+    border-bottom: $secondary-color 5px solid;
+  }
+
+  .job-4 {
+    grid-area: job4;
+    border-bottom: $secondary-color 5px solid;
+  }
+
+  .job-5 {
+    grid-area: job5;
+    border-bottom: $secondary-color 5px solid;
+  }
+
+  .job {
+    background: lighten($primary-color, 30);
+    background: transparent\9;
+    background: rgba(0, 0, 0, 0.4);
+
+    padding: 0.5rem;
+    border-bottom: $secondary-color 5px solid;
+    opacity: unit($number: 50);
+
+    font-size: 1.5rem;
+  }
+}
+
+// Work/Projects
+.projects {
+  display: grid;
+  grid-gap: 0.7rem;
+  grid-template-columns: repeat(3, 1fr);
+
+  img {
+    width: 100%;
+    border: 3px #fff solid;
+
+    &:hover {
+      opacity: 0.5;
+      border-color: $secondary-color;
+      @include easeOut;
+    }
+  }
+}
+
+// Contact Page
+.boxes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-top: 1rem;
+
+  div {
+    font-size: 2rem;
+    border: 3px #fff solid;
+    padding: 1.5rem 2.5rem;
+    margin-bottom: 3rem;
+    @include easeOut;
+
+    &:hover {
+      padding: 0.5rem 1.5rem;
+      background: $secondary-color;
+      color: set-text-color($secondary-color);
+
+      span {
+        color: set-text-color($secondary-color);
+      }
+    }
+  }
+}
+
+// Button Styles
+.btn {
+  display: block;
+  padding: 0.5rem 1rem;
+  border: 0;
+  margin-bottom: 0.3rem;
+
+  &:hover {
+    background: $secondary-color;
+    color: set-text-color($secondary-color);
+  }
+
+  font-size: medium;
+}
+
+.btn-dark {
+  @extend .btn;
+  background: darken($primary-color, 50);
+  color: #fff;
+}
+
+.btn-light {
+  @extend .btn;
+  background: lighten($primary-color, 50);
+  color: #333;
+}
+
+#main-footer {
+  text-align: center;
+  padding: 1rem;
+  background: darken($primary-color, 10);
+  color: set-text-color($primary-color);
+  height: 35px;
+}
+
+@import "mobile";
+@import "modal";
