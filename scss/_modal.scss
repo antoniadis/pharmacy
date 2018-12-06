@@ -158,7 +158,8 @@
 #popup-article-food-supplement,
 #popup-article-dent-hygiene,
 #popup-article-lab,
-#popup-article-homeopathy {
+#popup-article-homeopathy,
+#popup-article-baby {
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Open Sans,
     Ubuntu, Fira Sans, Helvetica Neue, sans-serif;
   font-size: 1.6rem;
@@ -174,7 +175,8 @@
 #popup-article-food-supplement:target,
 #popup-article-dent-hygiene:target,
 #popup-article-lab:target,
-#popup-article-homeopathy:target {
+#popup-article-homeopathy:target,
+#popup-article-baby:target {
   display: block;
 }
 
@@ -187,6 +189,18 @@
   overflow: auto;
   -webkit-animation: fade 0.5s ease-out 1.3s both;
   animation: fade 0.5s ease-out 1.3s both;
+  .icons {
+    margin-top: 1rem;
+
+    a {
+      padding: 0.4rem;
+
+      &:hover {
+        color: $secondary-color;
+        @include easeOut;
+      }
+    }
+  }
 }
 
 .popup:before {
