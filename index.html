@@ -10,7 +10,8 @@
             /* Always set the map height explicitly to define the size of the div
              * element that contains the map. */
             #map {
-              height: 100%;
+              height: 400px;
+              width: 100%;
             }
             /* Optional: Makes the sample page fill the window. */
             /* html, body {
@@ -18,7 +19,7 @@
               margin: 0;
               padding: 0;
             } */
-          </style>
+    </style>
 
     <link rel="icon" type="image/ico" href="/dist/img/logo-title-bar.jpg" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz"
@@ -217,13 +218,14 @@
                 </div> -->
                 <div id="map"></div>
                         <script>
-                        var map;
                         function initMap() {
-                            map = new google.maps.Map(document.getElementById('map'), {
-                            center: {lat: 37.927530, lng: 23.734630},
-                            zoom: 20
-                            });
-                        }
+                            var pharmcords = {lat: 37.927530, lng: 23.734630};
+                            var map = new google.maps.Map(
+                                document.getElementById('map'), {zoom: 20, center: pharmcords});
+                            // The marker, positioned at Pharmacy Antoniadis
+                            var marker = new google.maps.Marker({position: pharmcords, map: map});
+                        };
+                        
                         </script>
                         <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA3cCZ5ROXJ4V5ykuUB5DObMbg-ldu8F9o&callback=initMap"
                         async defer></script>
