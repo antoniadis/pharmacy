@@ -5,6 +5,24 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="google-site-verification" content="xYd1TzEVi2lI_vjgRgXB4NrhYuALAB2t377rkgIloXA" />
+
+
+    <style>
+            /* Always set the map height explicitly to define the size of the div
+             * element that contains the map. */
+            #map {
+              height: 200px;
+              width: 100%;
+              margin-top: 10%;
+            }
+            /* Optional: Makes the sample page fill the window. */
+            /* html, body {
+              height: 100%;
+              margin: 0;
+              padding: 0;
+            } */
+    </style>
 
     <link rel="icon" type="image/ico" href="/dist/img/logo-title-bar.jpg" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz"
@@ -195,12 +213,29 @@
         <div class="about-info">
             <div>
                 <img src="img/portrait.jpg" alt="pharmacy-logo" class="bio-image">
-                <div class="section" style="widows: auto; height: 250px; margin: 20px">
-                    <iframe 
+                <div id="map" class="section">
+                    <!-- <iframe 
                         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4450.684195192481!2d23.729916758229848!3d37.92788453371088!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14a1bdc3fc7300f1%3A0x35efbe8e5913c446!2zzqbOsc-BzrzOsc66zrXOr86_IC0gzpHOvc-Ez4nOvc65zqzOtM63z4IgzpXOvM68zrHOvc6_z4XOrs67IC0gzobOs865zr_PgiDOlM63zrzOrs-Ez4HOuc6_z4I!5e0!3m2!1sel!2sgr!4v1543235060947" 
-                        width="300" height="225" frameborder="0" style="border:0" allowfullscreen>
-                    </iframe>
+                        frameborder="0" style="border:0" allowfullscreen
+                        > -->
+                        <!-- width="300" height="225"  -->
+                        
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d25176.98703889792!2d23.734363!3d37.927548!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x35efbe8e5913c446!2sAntoniadis+Emmanouil!5e0!3m2!1sen!2sgr!4v1544097862835" width="250" height="150" frameborder="0" style="border:0" allowfullscreen></iframe>
+                    <!-- </iframe> -->
                 </div>
+                <!-- <div id="map"></div>
+                        <script>
+                        function initMap() {
+                            var pharmcords = {lat: 37.927530, lng: 23.734630};
+                            var map = new google.maps.Map(
+                                document.getElementById('map'), {zoom: 20, center: pharmcords});
+                            // The marker, positioned at Pharmacy Antoniadis
+                            var marker = new google.maps.Marker({position: pharmcords, map: map});
+                        };
+                        
+                        </script>
+                        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA3cCZ5ROXJ4V5ykuUB5DObMbg-ldu8F9o&callback=initMap"
+                        async defer></script> -->
             </div>
             <div class="job extra-grey" style="text-align: justify; font-weight: 800;">
                 <h3 class="text-secondary">Το Φαρμακείο σας</h3>
