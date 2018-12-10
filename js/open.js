@@ -48,32 +48,42 @@ var checkTime = function() {
         today + " " + hour + ":" + minutes + suffix + " - ανοικτα!";
       timeDiv.className = "open";
     } else if (hour == 14 && minutes < 30) {
-      // hour = ((hour + 11) % 12) + 1; //i.e. show 1:15 instead of 13:15
+      hour = ((hour + 11) % 12) + 1; //i.e. show 1:15 instead of 13:15
       timeDiv.innerHTML =
         // "it's " +
         today + " " + hour + ":" + minutes + suffix + " - ανοικτα!";
       timeDiv.className = "open";
     } else if (hour == 20 && minutes < 30) {
-      // hour = ((hour + 11) % 12) + 1; //i.e. show 1:15 instead of 13:15
+      hour = ((hour + 11) % 12) + 1; //i.e. show 1:15 instead of 13:15
       timeDiv.innerHTML =
         // "it's " +
         today + " " + hour + ":" + minutes + suffix + " - ανοικτα!";
       timeDiv.className = "open";
     } else {
-      hour = ((hour + 11) % 12) + 1; //i.e. show 1:15 instead of 13:15
-      // if (hour == 0 || hour > 12) {
-      //   hour = ((hour + 11) % 12) + 1; //i.e. show 1:15 instead of 13:15
-      // }
-      timeDiv.innerHTML =
-        // "It's " +
-        today + " " + hour + ":" + minutes + suffix + " - Κλειστα!";
-      timeDiv.className = "closed";
+      if ((hour == 14 && minutes >= 30) || hour >= 15) {
+        hour = ((hour + 11) % 12) + 1;
+        timeDiv.innerHTML =
+          // "It's " +
+          today +
+          " " +
+          hour +
+          ":" +
+          minutes +
+          suffix +
+          " - Κλειστα! Ανοιγουμε στις 17:00";
+        timeDiv.className = "closed";
+      } else {
+        hour = ((hour + 11) % 12) + 1; //i.e. show 1:15 instead of 13:15
+        // if (hour == 0 || hour > 12) {
+        //   hour = ((hour + 11) % 12) + 1; //i.e. show 1:15 instead of 13:15
+        // }
+        timeDiv.innerHTML =
+          today + " " + hour + ":" + minutes + suffix + " - Κλειστα!";
+        timeDiv.className = "closed";
+      }
     }
   } else {
     hour = ((hour + 11) % 12) + 1; //i.e. show 1:15 instead of 13:15
-    // if (hour == 0 || hour > 12) {
-    //   hour = ((hour + 11) % 12) + 1; //i.e. show 1:15 instead of 13:15
-    // }
     timeDiv.innerHTML =
       // "It's " +
       today + " " + hour + ":" + minutes + suffix + " - Κλειστα!";
