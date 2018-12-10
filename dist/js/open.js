@@ -8,7 +8,7 @@ weekday[4] = "Πεμπτη";
 weekday[5] = "Παρασκευη";
 weekday[6] = "Σαββατο";
 
-var checkTime = function() {
+var checkTime = function () {
   var today = weekday[now.getDay()];
   var timeDiv = document.getElementById("timeDiv");
   var dayOfWeek = now.getDay();
@@ -60,7 +60,7 @@ var checkTime = function() {
         today + " " + hour + ":" + minutes + suffix + " - ανοικτα!";
       timeDiv.className = "open";
     } else {
-      if ((hour == 14 && minutes >= 30) || hour >= 15) {
+      if ((hour == 14 && minutes >= 30) || (hour >= 15 && hour < 17)) {
         hour = ((hour + 11) % 12) + 1;
         timeDiv.innerHTML =
           // "It's " +
