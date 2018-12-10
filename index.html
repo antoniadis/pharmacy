@@ -7,7 +7,6 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <meta name="google-site-verification" content="xYd1TzEVi2lI_vjgRgXB4NrhYuALAB2t377rkgIloXA" />
 
-
     <style>
             /* Always set the map height explicitly to define the size of the div
              * element that contains the map. */
@@ -25,10 +24,15 @@
     </style>
 
     <link rel="icon" type="image/ico" href="/dist/img/logo-title-bar.jpg" />
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz"
-        crossorigin="anonymous" />
+    <link rel="stylesheet" 
+            href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" 
+            integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz"
+            crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/main.css"/>
 
-    <link rel="stylesheet" href="css/main.css" />
+    
+
     <title>Φαρμακείο Αντωνιάδη</title>
 </head>
 
@@ -77,8 +81,69 @@
             <!-- <a href="#!"> <i class="fab fa-linkedin fa-2x"></i> </a>
             <a href="#!"> <i class="fab fa-github fa-2x"></i> </a> -->
         </div>
+<br/>
+        <div id="main-open">
+            <div id="darkBack"></div>
+             <div id="logo">
+                <!-- <img src="http://401creative.com/wp-content/uploads/2013/07/Griddle_Logo.png" /> -->
+            </div> 
+          
+            <div id="timeDiv"></div>
+            <label class="viewOpen" for="modal-state">Ωρες Λειτουργιας&nbsp;&nbsp;<i class="fa fa-clock-o"></i>
+            </label>
+            <input type="checkbox" name="modal-state" id="modal-state">
+            <div class="modal-overlay">
+              <label for="modal-state" class="modal-overlay-close"></label>
+              <div class="modal">
+                <label class="button-close" for="modal-state"><i class="fa fa-times"></i></label>
+                <h2>Ώρες Λειτουργίας</h2>
+                
+                <div id="Δευτερα" class="dateTime">
+                        <div class="day">Δευτέρα</div>
+                        <div class="time">8:15 π.μ - 2:30 μ.μ & 5:00 μ.μ. - 8:30 μ.μ.</div>
+                      </div>
+                      <br/>
+                      <div id="Tuesday" class="dateTime">
+                        <div class="day">Τρίτη</div>
+                        <div class="time">8:15 π.μ - 2:30 μ.μ & 5:00 μ.μ. - 8:30 μ.μ.</div>
+                      </div>
+                      <br/>
+                <div id="Wednesday" class="dateTime">
+                  <div class="day">Τετάρτη</div>
+                  <div class="time">8:15 π.μ - 2:30 μ.μ & 5:00 μ.μ. - 8:30 μ.μ.</div>
+                </div>
+                <br/>
+                <div id="Thursday" class="dateTime">
+                  <div class="day">Πέμπτη</div>
+                  <div class="time">8:15 π.μ - 2:30 μ.μ & 5:00 μ.μ. - 8:30 μ.μ.</div>
+                </div>
+                <br/>
+                <div id="Friday" class="dateTime">
+                  <div class="day">Παρασκευή</div>
+                  <div class="time">8:15 π.μ - 2:30 μ.μ & 5:00 μ.μ. - 8:30 μ.μ.</div>
+                </div>
+                <br/>
+                <div id="Saturday" class="dateTime">
+                  <div class="day">Σάββατο</div>
+                  <div class="time">ΚΛΕΙΣΤΑ</div>
+                </div>
+                <br/>
+                <div id="Sunday" class="dateTime">
+                  <div class="day">Κυριακή</div>
+                  <div class="time">ΚΛΕΙΣΤΑ</div>
+                </div>
+                <br>
+                
+            </div>
+            </div>
+          </div>
+            <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'>
+            </script>
+            <script  src="js/open.js"></script>
+          <br/>
+          
 
-    <!-- #region Jssor Slider Begin -->
+            <!-- #region Jssor Slider Begin -->
     <!-- Generator: Jssor Slider Maker -->
     <!-- Source: https://www.jssor.com -->
     <script type="text/javascript" src="js/jssor.slider-27.5.0.min.js" ></script>
