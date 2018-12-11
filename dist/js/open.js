@@ -8,7 +8,7 @@ weekday[4] = "Πεμπτη";
 weekday[5] = "Παρασκευη";
 weekday[6] = "Σαββατο";
 
-var checkTime = function () {
+var checkTime = function() {
   var today = weekday[now.getDay()];
   var timeDiv = document.getElementById("timeDiv");
   var dayOfWeek = now.getDay();

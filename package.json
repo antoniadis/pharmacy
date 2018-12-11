@@ -6,6 +6,8 @@
   "homepage": "htps://antoniadis.github.io/pharmacy",
   "scripts": {
     "sass": "node-sass -w scss/ -o dist/css/ --recursive",
+    "xsass": "node-sass -w scss/expand.scss -o dist/css/ --recursive",
+    "xxsass": "node-sass -w scss/info-card-slider.scss -o dist/css/ --recursive",
     "deploy": "gh-pages -d dist"
   },
   "author": "Yannis L. Tambakis",

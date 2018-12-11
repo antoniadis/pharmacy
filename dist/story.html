@@ -42,8 +42,6 @@
       href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css"
     />
 
-    <!-- <link rel="stylesheet" href="css/info-card-slider.css" /> -->
-    <!-- <link rel="stylesheet" href="css/expand.css" /> -->
     <link rel="stylesheet" href="css/main.css" />
 
     <title>Φαρμακείο Αντωνιάδης</title>
@@ -94,293 +92,6 @@
         </a>
       </div>
       <br />
-      <div id="main-open">
-        <!-- <div id="darkBack"></div> -->
-        <div id="logo">
-          <!--
-            <img src="http://401creative.com/wp-content/uploads/2013/07/Griddle_Logo.png" />
-          -->
-        </div>
-
-        <div id="timeDiv"></div>
-        <label class="viewOpen" for="modal-state"
-          >Ωρες Λειτουργιας&nbsp;&nbsp;<i class="fa fa-clock-o"></i>
-        </label>
-        <input type="checkbox" name="modal-state" id="modal-state" />
-        <div class="modal-overlay">
-          <label for="modal-state" class="modal-overlay-close"></label>
-          <div class="modal">
-            <label class="button-close" for="modal-state"
-              ><i class="fa fa-times"></i
-            ></label>
-            <h2>Ώρες Λειτουργίας</h2>
-
-            <div id="Δευτερα" class="dateTime">
-              <div class="day">Δευτέρα</div>
-              <div class="time">
-                8:15 π.μ - 2:30 μ.μ & 5:00 μ.μ. - 8:30 μ.μ.
-              </div>
-            </div>
-            <br />
-            <div id="Τριτη" class="dateTime">
-              <div class="day">Τρίτη</div>
-              <div class="time">
-                8:15 π.μ - 2:30 μ.μ & 5:00 μ.μ. - 8:30 μ.μ.
-              </div>
-            </div>
-            <br />
-            <div id="Τεταρτη" class="dateTime">
-              <div class="day">Τετάρτη</div>
-              <div class="time">
-                8:15 π.μ - 2:30 μ.μ & 5:00 μ.μ. - 8:30 μ.μ.
-              </div>
-            </div>
-            <br />
-            <div id="Πεμπτη" class="dateTime">
-              <div class="day">Πέμπτη</div>
-              <div class="time">
-                8:15 π.μ - 2:30 μ.μ & 5:00 μ.μ. - 8:30 μ.μ.
-              </div>
-            </div>
-            <br />
-            <div id="Παρασκευη" class="dateTime">
-              <div class="day">Παρασκευή</div>
-              <div class="time">
-                8:15 π.μ - 2:30 μ.μ & 5:00 μ.μ. - 8:30 μ.μ.
-              </div>
-            </div>
-            <br />
-            <div id="Σαββατο" class="dateTime">
-              <div class="day">Σάββατο</div>
-              <div class="time">ΚΛΕΙΣΤΑ</div>
-            </div>
-            <br />
-            <div id="Κυριακη" class="dateTime">
-              <div class="day">Κυριακή</div>
-              <div class="time">ΚΛΕΙΣΤΑ</div>
-            </div>
-            <br />
-          </div>
-        </div>
-      </div>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-      <script src="js/open.js"></script>
-      <br />
-
-      <!-- #region Jssor Slider Begin -->
-      <!-- Generator: Jssor Slider Maker -->
-      <!-- Source: https://www.jssor.com -->
-      <script
-        type="text/javascript"
-        src="js/jssor.slider-27.5.0.min.js"
-      ></script>
-      <script type="text/javascript">
-        jssor_1_slider_init = function() {
-          var jssor_1_SlideshowTransitions = [
-            {
-              $Duration: 800,
-              x: -0.3,
-              $During: { $Left: [0.3, 0.7] },
-              $Easing: { $Left: $Jease$.$InCubic, $Opacity: $Jease$.$Linear },
-              $Opacity: 2
-            },
-            {
-              $Duration: 800,
-              x: 0.3,
-              $SlideOut: true,
-              $Easing: { $Left: $Jease$.$InCubic, $Opacity: $Jease$.$Linear },
-              $Opacity: 2
-            }
-          ];
-
-          var jssor_1_options = {
-            $AutoPlay: 1,
-            $SlideshowOptions: {
-              $Class: $JssorSlideshowRunner$,
-              $Transitions: jssor_1_SlideshowTransitions,
-              $TransitionsOrder: 1
-            },
-            $ArrowNavigatorOptions: {
-              $Class: $JssorArrowNavigator$
-            },
-            $ThumbnailNavigatorOptions: {
-              $Class: $JssorThumbnailNavigator$,
-              $Orientation: 2,
-              $NoDrag: true
-            }
-          };
-
-          var jssor_1_slider = new $JssorSlider$("jssor_1", jssor_1_options);
-
-          /*#region responsive code begin*/
-
-          var MAX_WIDTH = 980;
-
-          function ScaleSlider() {
-            var containerElement = jssor_1_slider.$Elmt.parentNode;
-            var containerWidth = containerElement.clientWidth;
-
-            if (containerWidth) {
-              var expectedWidth = Math.min(
-                MAX_WIDTH || containerWidth,
-                containerWidth
-              );
-
-              jssor_1_slider.$ScaleWidth(expectedWidth);
-            } else {
-              window.setTimeout(ScaleSlider, 30);
-            }
-          }
-
-          ScaleSlider();
-
-          $Jssor$.$AddEvent(window, "load", ScaleSlider);
-          $Jssor$.$AddEvent(window, "resize", ScaleSlider);
-          $Jssor$.$AddEvent(window, "orientationchange", ScaleSlider);
-          /*#endregion responsive code end*/
-        };
-      </script>
-      <style>
-        /*jssor slider loading skin spin css*/
-        .jssorl-009-spin img {
-          animation-name: jssorl-009-spin;
-          animation-duration: 1.6s;
-          animation-iteration-count: infinite;
-          animation-timing-function: linear;
-        }
-
-        @keyframes jssorl-009-spin {
-          from {
-            transform: rotate(0deg);
-          }
-          to {
-            transform: rotate(360deg);
-          }
-        }
-
-        .jssora061 {
-          display: block;
-          position: absolute;
-          cursor: pointer;
-        }
-        .jssora061 .a {
-          fill: none;
-          stroke: #fff;
-          stroke-width: 360;
-          stroke-linecap: round;
-        }
-        .jssora061:hover {
-          opacity: 0.8;
-        }
-        .jssora061.jssora061dn {
-          opacity: 0.5;
-        }
-        .jssora061.jssora061ds {
-          opacity: 0.3;
-          pointer-events: none;
-        }
-      </style>
-
-      <div
-        id="jssor_1"
-        style="position: relative;
-                                margin:0 auto;
-                                margin-bottom: 10px;
-                                top:0px;
-                                left:10px;
-                                width:980px;
-                                height:380px;
-                                overflow:hidden;
-                                visibility:hidden;"
-      >
-        <!-- Loading Screen -->
-        <div
-          data-u="loading"
-          class="jssorl-009-spin"
-          style="position:absolute;top:0px;left:0px;width:100%;height:100%;text-align:center;background-color:rgba(0,0,0,0.7);"
-        >
-          <img
-            style="margin-top:-19px;position:relative;top:50%;width:38px;height:38px;"
-            src="img/spin.svg"
-          />
-        </div>
-        <div
-          data-u="slides"
-          style="cursor:default;position:relative;top:0px;left:0px;width:980px;height:380px;overflow:hidden;"
-        >
-          <div>
-            <img data-u="image" src="img/banner/IMG_1417.JPG" />
-            <div u="thumb">Πολλές κατηγορίες προϊόντων σε άνετο χώρο</div>
-          </div>
-
-          <div>
-            <img data-u="image" src="img/banner/IMG_1424.JPG" />
-            <div u="thumb">Κάθε μέρα νέες προσφορές</div>
-          </div>
-          <div>
-            <img data-u="image" src="img/banner/IMG_1427.JPG" />
-            <div u="thumb">Χαρά μας να σας εξυπηρετήσουμε!</div>
-          </div>
-        </div>
-        <!-- Thumbnail Navigator -->
-        <div
-          u="thumbnavigator"
-          style="position:absolute;bottom:0px;left:0px;width:980px;height:50px;color:#FFF;overflow:hidden;cursor:default;background-color:rgba(0,0,0,.5);"
-        >
-          <div u="slides">
-            <div
-              u="prototype"
-              style="position:absolute;top:0;left:0;width:980px;height:50px;"
-            >
-              <div
-                u="thumbnailtemplate"
-                style="position:absolute;top:0;left:0;width:100%;height:100%;font-family:arial,helvetica,verdana;font-weight:normal;line-height:50px;font-size:16px;padding-left:10px;box-sizing:border-box;"
-              ></div>
-            </div>
-          </div>
-        </div>
-        <!-- Arrow Navigator -->
-        <div
-          data-u="arrowleft"
-          class="jssora061"
-          style="width:55px;height:55px;top:0px;left:25px;"
-          data-autocenter="2"
-          data-scale="0.75"
-          data-scale-left="0.75"
-        >
-          <svg
-            viewbox="0 0 16000 16000"
-            style="position:absolute;top:0;left:0;width:100%;height:100%;"
-          >
-            <path
-              class="a"
-              d="M11949,1919L5964.9,7771.7c-127.9,125.5-127.9,329.1,0,454.9L11949,14079"
-            ></path>
-          </svg>
-        </div>
-        <div
-          data-u="arrowright"
-          class="jssora061"
-          style="width:55px;height:55px;top:0px;right:25px;"
-          data-autocenter="2"
-          data-scale="0.75"
-          data-scale-right="0.75"
-        >
-          <svg
-            viewbox="0 0 16000 16000"
-            style="position:absolute;top:0;left:0;width:100%;height:100%;"
-          >
-            <path
-              class="a"
-              d="M5869,1919l5984.1,5852.7c127.9,125.5,127.9,329.1,0,454.9L5869,14079"
-            ></path>
-          </svg>
-        </div>
-      </div>
-      <script type="text/javascript">
-        jssor_1_slider_init();
-      </script>
-      <!-- #endregion Jssor Slider End -->
 
       <div class="about-info">
         <div>
@@ -398,9 +109,9 @@
             ></iframe>
           </div>
         </div>
-        
+        <!--
           <div class="job extra-grey" style="text-align: justify; font-weight: 800;">
-              <h3 class="text-secondary">Η Ιστορία μας</h3>
+              <h3 class="text-secondary">Το Φαρμακείο σας</h3>
               <p style="text-align: justify; font-weight: 800;">
                   <span>
                       Το φαρμακείο <span class="text-secondary">Αντωνιάδη</span> λειτουργεί στον Άγιο Δημήτριο από το <span class="text-secondary">1985</span>.
@@ -482,9 +193,127 @@
                       </div>
               </p>
           </div>
-       
+        -->
 
-                
+        <!--
+          <div class="wrapper">
+            <div class="header">
+              <h1 class="header__title">Η ΙΣΤΟΡΙΑ ΜΑΣ</h1>
+              <h2 class="header__subtitle"></h2>
+            </div>
+
+            <div class="cards">
+              <div class="card [ is-collapsed ]">
+                <div class="card__inner [ js-expander ]">
+                  <span>Εμμανουηλ Αντωνιαδης</span>
+                  <span class="text-secondary">Φαρμακοποιoς</span>
+                  <i class="fa fa-folder-o"></i>
+                </div>
+                <div class="card__expander">
+                  <i class="fa fa-close [ js-collapser ]"></i> Aπόφοιτος του
+                  Εθνικού και Καποδιστριακού Πανεπιστημίου Αθηνών και ιδρυτής του
+                  φαρμακείου. Εργάστηκε στη φαρμακοβιομηχανία πριν την ίδρυση του
+                  φαρμακείου και έχει σημαντική εξειδίκευση στην κατηγορία των
+                  αντιβιοτικών φαρμάκων. Έχει πολυετή εμπειρία στο χώρο του
+                  φαρμακείου. Έχει παρακολουθήσει και συμμετάσχει σε μεγάλο αριθμό
+                  σεμιναρίων και συνεδρίων. Είναι στη διάθεσή σας για οτιδήποτε
+                  σας απασχολεί σχετικά με τη φαρμακοθεραπεία που λαμβάνετε,
+                  εναλλακτικές μορφές θεραπείας, συμπληρώματα διατροφής και
+                  ορθοπεδικά είδη.
+                </div>
+              </div>
+            </div>
+          </div>
+        -->
+        <section id="body">
+          <div class="card-slider">
+            <div class="products">
+              <div
+                class="product active"
+                product-id="1"
+                product-color="#D18B49"
+              >
+                <div class="thumbnail"></div>
+                <h1 class="title-slider">The Magnificent Stag</h1>
+                <p class="description">
+                  Fusce dapibus, tellus ac cursus commodo, tortor mauris
+                  condimentum nibh, ut fermentum massa justo sit amet
+                  risus.Fusce dapibus, tellus ac cursus commodo, tortor mauris
+                  condimentum nibh, ut fermentum massa justo sit amet
+                  risus.Fusce dapibus, tellus ac cursus commodo, tortor mauris
+                  condimentum nibh, ut fermentum massa justo sit amet risus.
+                </p>
+              </div>
+              <!--
+                <div class="product" product-id="2" product-color="#542F13">
+                  <div class="thumbnail">
+                    <img
+                      src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/169963/Bear.svg"
+                    />
+                  </div>
+                  <h1 class="title-slider">The Courageous Bear</h1>
+                  <p class="description">
+                    Fusce dapibus, tellus ac cursus commodo, tortor mauris
+                    condimentum nibh, ut fermentum massa justo sit amet risus.
+                  </p>
+                </div>
+                <div class="product" product-id="3" product-color="#A5AAAE">
+                  <div class="thumbnail">
+                    <img
+                      src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/169963/Mouse.svg"
+                    />
+                  </div>
+                  <h1 class="title-slider">The Sneaky Mouse</h1>
+                  <p class="description">
+                    Fusce dapibus, tellus ac cursus commodo, tortor mauris
+                    condimentum nibh, ut fermentum massa justo sit amet risus.
+                  </p>
+                </div>
+                <div class="product" product-id="4" product-color="#ED8D1F">
+                  <div class="thumbnail">
+                    <img
+                      src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/169963/Fox.svg"
+                    />
+                  </div>
+                  <h1 class="title-slider">The Cunning Fox</h1>
+                  <p class="description">
+                    Fusce dapibus, tellus ac cursus commodo, tortor mauris
+                    condimentum nibh, ut fermentum massa justo sit amet risus.
+                  </p>
+                </div>
+                <div class="product" product-id="5" product-color="#C4C8CB">
+                  <div class="thumbnail">
+                    <img
+                      src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/169963/Rabbit.svg"
+                    />
+                  </div>
+                  <h1 class="title-slider">The Jumpy Rabbit</h1>
+                  <p class="description">
+                    Fusce dapibus, tellus ac cursus commodo, tortor mauris
+                    condimentum nibh, ut fermentum massa justo sit amet risus.
+                  </p>
+                </div>
+              -->
+            </div>
+            <div class="footer-slider">
+              <a
+                class="btn-slider"
+                id="prev"
+                href="#"
+                ripple=""
+                ripple-color="#666666"
+                >Prev</a
+              ><a
+                class="btn-slider"
+                id="next"
+                href="#"
+                ripple=""
+                ripple-color="#666666"
+                >Next</a
+              >
+            </div>
+          </div>
+        </section>
       </div>
     </main>
     <footer id="main-footer">Copyright &copy; 2018</footer>
