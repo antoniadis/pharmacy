@@ -60,7 +60,7 @@ var checkTime = function() {
         today + " " + hour + ":" + minutes + suffix + " - ανοικτα!";
       timeDiv.className = "open";
     } else {
-      if ((hour == 14 && minutes >= 30) || hour >= 15) {
+      if ((hour == 14 && minutes >= 30) || (hour >= 15 && hour < 17)) {
         hour = ((hour + 11) % 12) + 1;
         timeDiv.innerHTML =
           // "It's " +
