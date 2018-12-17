@@ -10,21 +10,126 @@
     />
 
     <style>
-      /* Always set the map height explicitly to define the size of the div
-             * element that contains the map. */
-      #map {
-        height: 200px;
-        width: 100%;
-        margin-top: 10%;
-      }
-      /* Optional: Makes the sample page fill the window. */
-      /* html, body {
-              height: 100%;
-              margin: 0;
-              padding: 0;
-            } */
-    </style>
+        /* $base-background: #00CC99; */
+        .container {
+          color: rgba(0, 0, 0, 0.6);
+          font-family: "Roboto", sans-serif;
+          font-size: 14px;
+          line-height: 1.6em;
+          -webkit-font-smoothing: antialiased;
+          -moz-osx-font-smoothing: grayscale;
+          transition: 0.5s ease;
+        }
+    
+        .btn-slider {
+          border-radius: 2px;
+          padding: 8px 12px;
+          color: #d18b49;
+          font-size: 14px;
+          font-weight: 500;
+          text-decoration: none;
+          text-transform: uppercase;
+          transition: 0.5s ease;
+        }
+    
+        .card-slider {
+          background: #ffffff;
+          max-width: 400px;
+          margin: 100px auto;
+          border-radius: 12px;
+          box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+          box-sizing: border-box;
+          padding: 48px;
+          text-align: center;
+        }
+    
+        .products {
+          position: relative;
+          overflow: hidden;
+          transition: 0.5s ease;
+        }
+    
+        .product {
+          position: absolute;
+          top: 0;
+          left: 0;
+          opacity: 0;
+          visibility: hidden;
+          transition: 0.5s ease;
+        }
+        .product.active {
+          opacity: 1;
+          visibility: visible;
+        }
+    
+        .thumbnail {
+          margin: 0 0 48px;
+        }
+    
+        .title-slider {
+          margin: 0 0 12px;
+          color: #d18b49;
+          font-size: 24px;
+          transition: 0.5s ease;
+        }
+    
+        .description {
+          margin: 0 0 48px;
+        }
+    
+        .footer-slider {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          margin: 0 -12px -12px;
+        }
+    
+        [ripple] {
+          z-index: 1;
+          position: relative;
+          overflow: hidden;
+        }
+        [ripple] .ripple {
+          position: absolute;
+          background: #ffffff;
+          width: 60px;
+          height: 60px;
+          border-radius: 100%;
+          -webkit-transform: scale(0);
+          transform: scale(0);
+          -webkit-animation: ripple 2s;
+          animation: ripple 2s;
+        }
+    
+        @-webkit-keyframes ripple {
+          0% {
+            -webkit-transform: scale(0);
+            transform: scale(0);
+            opacity: 0.2;
+          }
+          100% {
+            -webkit-transform: scale(20);
+            transform: scale(20);
+            opacity: 0;
+          }
+        }
+    
+        @keyframes ripple {
+          0% {
+            -webkit-transform: scale(0);
+            transform: scale(0);
+            opacity: 0.2;
+          }
+          100% {
+            -webkit-transform: scale(20);
+            transform: scale(20);
+            opacity: 0;
+          }
+        }
 
+        
+      </style>
+    
     <link
       rel="shortcut icon"
       href="https://raw.githubusercontent.com/antoniadis/pharmacy/master/dist/img/logo-title-bar.jpg"
@@ -41,12 +146,12 @@
       rel="stylesheet"
       href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css"
     />
-
     <link rel="stylesheet" href="css/main.css" />
-
-    <title>Φαρμακείο Αντωνιάδης</title>
+    
   </head>
+    <title>Φαρμακείο Αντωνιάδης</title>
 
+  
   <body id="bg-img">
     <header>
       <div class="menu-btn">
@@ -82,244 +187,125 @@
           alt="Φαρμακείο Εμμ. Αντωνιάδη"
         />
       </span>
-
       <h1 class="sm-heading">Γνώση, Εμπειρία, Εμπιστοσύνη</h1>
-
       <div class="icons">
         <!-- <a href="#!"> <i class="fab fa-twitter fa-2x"></i> </a> -->
         <a href="https://www.facebook.com/Φαρμακείο-Αντωνιάδη-245823279138008/">
           <i class="fab fa-facebook fa-2x" style="font-size: 428%;"></i>
         </a>
       </div>
-      <br />
-
-      <div class="about-info">
-        <div>
-          <!--
-            <img src="img/portrait.jpg" alt="pharmacy-logo" class="bio-image" />
-          -->
-          <div id="map" class="section">
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d25176.98703889792!2d23.734363!3d37.927548!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x35efbe8e5913c446!2sAntoniadis+Emmanouil!5e0!3m2!1sen!2sgr!4v1544097862835"
-              width="250"
-              height="150"
-              frameborder="0"
-              style="border:0"
-              allowfullscreen
-            ></iframe>
+      <div class="container">
+      <div class="card-slider">
+        <div class="products">
+          <div class="product active" product-id="1" product-color="#D18B49">
+            <div class="thumbnail"></div>
+            <h1 class="title-slider">Γνώση</h1>
+            <p class="description">
+              Το φαρμακείο
+              <span style="color:seagreen"><b>Αντωνιάδη</b></span> λειτουργεί στον Άγιο
+              Δημήτριο από το <span style="color:seagreen"><b>1985</b></span>. Βασικός
+              πυλώνας της λειτουργίας μας είναι η ανακούφισή σας, η εξυπηρέτηση
+              των αναγκών σας και η παροχή πρωτοβάθμιας περίθαλψης υγείας.
+            </p>
+          </div>
+          <div class="product" product-id="2" product-color="#542F13">
+            <div class="thumbnail"><img /></div>
+            <h1 class="title-slider">Εμπειρία</h1>
+            <p class="description">
+              Με την <span style="color:seagreen"><b>πρόσφατη ανακαίνιση</b></span> το
+              φαρμακείο μεταφέρθηκε σε νέο χώρο και εμπλουτίστηκε με προϊόντα
+              που καλύπτουν τις ανάγκες μεγάλου εύρους παθήσεων ενώ
+              <span style="color:seagreen"><b>συνεχίζουμε να εξελισσόμαστε</b></span>
+              για να μπορούμε να ανταποκρινόμαστε στις νέες επιστημονικές
+              οδηγίες στο χώρο του φαρμάκου.
+            </p>
+          </div>
+          <div class="product" product-id="3" product-color="#A5AAAE">
+            <div class="thumbnail">
+              <img
+              />
+            </div>
+            <h1 class="title-slider">Εμπιστοσύνη</h1>
+            <p class="description">
+                Το προσωπικό του φαρμακείου αποτελείται από 
+                <span style="color:seagreen"><b>επιστήμονες</b></span>
+                με πολυετή εμπειρία στο
+                χώρο της υγείας
+                αλλά και ταυτόχρονη ενασχόληση με την έρευνα σε ιδρύματα διεθνούς κύρους που μας
+                δίνει τη
+                δυνατότητα να σας συμβουλεύσουμε στηριζόμενοι στα τελευταία ιατρικά και
+                φαρμακευτικά δεδομένα.
+                Είμαστε σε άμεση συνεργασία με τη Φαρμακευτική σχολή του Εθνικού και Καποδιστριακού
+                Πανεπιστημίου Αθηνών όπου <span style="color:seagreen"><b>συμμετέχουμε σε ερευνητικές
+                    μελέτες</b></span>
+            </p>
+          </div>
+          <div class="product" product-id="4" product-color="#ED8D1F">
+            <div class="thumbnail">
+              <img
+                
+              />
+            </div>
+            <h1 class="title-slider">Έχουμε ό,τι χρειάζεστε</h1>
+            <p class="description">
+                Στο φαρμακείο μας λειτουργεί φαρμακοπωλείο από όπου μπορείτε να προμηθευτείτε όλα
+                τα
+                εγκεκριμένα από τον ΕΟΦ συνταγογραφούμενα και μη συνταγογραφούμενα σκευάσματα.
+                Επιπλέον,
+                διαθέτουμε μεγάλη
+                ποικιλία <span style="color:seagreen"><b>συμπληρωμάτων διατροφής</b></span>, προϊόντων για
+                τη <span style="color:seagreen"><b>στοματική υγιεινή</b></span>,
+                <span style="color:seagreen"><b>ορθοπεδικών</b></span> ειδών,
+                <span style="color:seagreen"><b>ομοιοπαθητικών</b></span> σκευασμάτων όλων των
+                δυναμοποιήσεων και <span style="color:seagreen"><b>δερμοκαλλυντικών</b></span>. Το
+                <span style="color:seagreen"><b>γαληνικό μας
+                        εργαστήριο </b></span> είναι πλήρως εξοπλισμένο και μπορούμε να αναλάβουμε την παρασκευή
+                οποιουδήποτε
+                σκευάσματος
+                χρειάζεστε (δερμοκαλλυντικά, συμπληρώματα διατροφής, ομοιοπαθητικά, διαμορφώσεις
+                δόσεων και
+                φαρμακοτεχνικών μορφών κυκλοφορούντων φαρμάκων για χορήγηση σε παιδιά κ.ο.κ).
+            </p>
+          </div>
+          <div class="product" product-id="5" product-color="#C4C8CB">
+            <div class="thumbnail">
+              <img
+                />
+            </div>
+            <h1 class="title-slider">Πρωτοπορούμε</h1>
+            <p class="description">
+                Επιπλέον, σύντομα
+                θα εισάγουμε τη <span style="color:seagreen"><b>δική μας σειρά προϊόντων</b></span>,
+                παρασκευασμένη στο γαληνικό μας
+                εργαστήριο πάντα
+                βασιζόμενοι σε σύγχρονες ερευνητικές μελέτες.</span>
+            </p>
           </div>
         </div>
-        <!--
-          <div class="job extra-grey" style="text-align: justify; font-weight: 800;">
-              <h3 class="text-secondary">Το Φαρμακείο σας</h3>
-              <p style="text-align: justify; font-weight: 800;">
-                  <span>
-                      Το φαρμακείο <span class="text-secondary">Αντωνιάδη</span> λειτουργεί στον Άγιο Δημήτριο από το <span class="text-secondary">1985</span>.
-                      Βασικός πυλώνας της λειτουργίας μας είναι η ανακούφισή σας, η εξυπηρέτηση των αναγκών σας και η
-                      παροχή πρωτοβάθμιας περίθαλψης υγείας.
-                  </span>
-                  <div class="wpb_text_column wpb_content_element ">
-                      <div class="wpb_wrapper">
-                          <p style="text-align: justify;">
-                              <span>
-                                  Με την <span class="text-secondary">πρόσφατη ανακαίνιση</span> το φαρμακείο
-                                  μεταφέρθηκε σε νέο χώρο και εμπλουτίστηκε
-                                  με προϊόντα
-                                  που καλύπτουν τις ανάγκες μεγάλου εύρους παθήσεων ενώ
-                                  <span class="text-secondary">συνεχίζουμε
-                                      να εξελισσόμαστε</span>
-                                  για να
-                                  μπορούμε να ανταποκρινόμαστε στις νέες
-                                  επιστημονικές οδηγίες στο χώρο του φαρμάκου.
-                              </span>
-                      </div>
-                  </div>
-                  <div class="wpb_text_column wpb_content_element ">
-                      <div class="wpb_wrapper">
-                          <p style="text-align: justify;">
-                          <br/>
-                              <span>
-                                  Το προσωπικό του φαρμακείου αποτελείται από <span class="text-secondary">επιστήμονες</span>
-                                  με πολυετή εμπειρία στο
-                                  χώρο της υγείας
-                                  αλλά και ταυτόχρονη ενασχόληση με την έρευνα σε ιδρύματα διεθνούς κύρους που μας
-                                  δίνει τη
-                                  δυνατότητα να σας συμβουλεύσουμε στηριζόμενοι στα τελευταία ιατρικά και
-                                  φαρμακευτικά δεδομένα.
-                                  Είμαστε σε άμεση συνεργασία με τη Φαρμακευτική σχολή του Εθνικού και Καποδιστριακού
-                                  Πανεπιστημίου Αθηνών όπου <span class="text-secondary">συμμετέχουμε σε ερευνητικές
-                                      μελέτες</span>.</span>
-
-                      </div>
-                  </div>
-                  <div class="wpb_text_column wpb_content_element ">
-                      <div class="wpb_wrapper">
-                          <p style="text-align: justify;">
-                                  <br/>
-                              <span>
-
-                                  Στο φαρμακείο μας λειτουργεί φαρμακοπωλείο από όπου μπορείτε να προμηθευτείτε όλα
-                                  τα
-                                  εγκεκριμένα από τον ΕΟΦ συνταγογραφούμενα και μη συνταγογραφούμενα σκευάσματα.
-                                  Επιπλέον,
-                                  διαθέτουμε μεγάλη
-                                  ποικιλία <span class="text-secondary">συμπληρωμάτων διατροφής</span>, προϊόντων για
-                                  τη <span class="text-secondary">στοματική υγιεινή</span>,
-                                  <span class="text-secondary">ορθοπεδικών</span> ειδών,
-                                  <span class="text-secondary">ομοιοπαθητικών</span> σκευασμάτων όλων των
-                                  δυναμοποιήσεων και <span class="text-secondary">δερμοκαλλυντικών</span>. Το
-                                  <span class="text-secondary">γαληνικό μας
-                                          εργαστήριο </span> είναι πλήρως εξοπλισμένο και μπορούμε να αναλάβουμε την παρασκευή
-                                  οποιουδήποτε
-                                  σκευάσματος
-                                  χρειάζεστε (δερμοκαλλυντικά, συμπληρώματα διατροφής, ομοιοπαθητικά, διαμορφώσεις
-                                  δόσεων και
-                                  φαρμακοτεχνικών μορφών κυκλοφορούντων φαρμάκων για χορήγηση σε παιδιά κ.ο.κ).
-                          </div>
-                  </div>
-
-                  <div class="wpb_text_column wpb_content_element ">
-                          <div class="wpb_wrapper">
-                              <p style="text-align: justify;">
-                                      <br/>
-                                  <span>
-
-                                      Επιπλέον, σύντομα
-                                      θα εισάγουμε τη <span class="text-secondary">δική μας σειρά προϊόντων</span>,
-                                      παρασκευασμένη στο γαληνικό μας
-                                      εργαστήριο πάντα
-                                      βασιζόμενοι σε σύγχρονες ερευνητικές μελέτες.</span> </p>
-                          </div>
-                      </div>
-              </p>
-          </div>
-        -->
-
-        <!--
-          <div class="wrapper">
-            <div class="header">
-              <h1 class="header__title">Η ΙΣΤΟΡΙΑ ΜΑΣ</h1>
-              <h2 class="header__subtitle"></h2>
-            </div>
-
-            <div class="cards">
-              <div class="card [ is-collapsed ]">
-                <div class="card__inner [ js-expander ]">
-                  <span>Εμμανουηλ Αντωνιαδης</span>
-                  <span class="text-secondary">Φαρμακοποιoς</span>
-                  <i class="fa fa-folder-o"></i>
-                </div>
-                <div class="card__expander">
-                  <i class="fa fa-close [ js-collapser ]"></i> Aπόφοιτος του
-                  Εθνικού και Καποδιστριακού Πανεπιστημίου Αθηνών και ιδρυτής του
-                  φαρμακείου. Εργάστηκε στη φαρμακοβιομηχανία πριν την ίδρυση του
-                  φαρμακείου και έχει σημαντική εξειδίκευση στην κατηγορία των
-                  αντιβιοτικών φαρμάκων. Έχει πολυετή εμπειρία στο χώρο του
-                  φαρμακείου. Έχει παρακολουθήσει και συμμετάσχει σε μεγάλο αριθμό
-                  σεμιναρίων και συνεδρίων. Είναι στη διάθεσή σας για οτιδήποτε
-                  σας απασχολεί σχετικά με τη φαρμακοθεραπεία που λαμβάνετε,
-                  εναλλακτικές μορφές θεραπείας, συμπληρώματα διατροφής και
-                  ορθοπεδικά είδη.
-                </div>
-              </div>
-            </div>
-          </div>
-        -->
-        <section id="body">
-          <div class="card-slider">
-            <div class="products">
-              <div
-                class="product active"
-                product-id="1"
-                product-color="#D18B49"
-              >
-                <div class="thumbnail"></div>
-                <h1 class="title-slider">The Magnificent Stag</h1>
-                <p class="description">
-                  Fusce dapibus, tellus ac cursus commodo, tortor mauris
-                  condimentum nibh, ut fermentum massa justo sit amet
-                  risus.Fusce dapibus, tellus ac cursus commodo, tortor mauris
-                  condimentum nibh, ut fermentum massa justo sit amet
-                  risus.Fusce dapibus, tellus ac cursus commodo, tortor mauris
-                  condimentum nibh, ut fermentum massa justo sit amet risus.
-                </p>
-              </div>
-              <!--
-                <div class="product" product-id="2" product-color="#542F13">
-                  <div class="thumbnail">
-                    <img
-                      src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/169963/Bear.svg"
-                    />
-                  </div>
-                  <h1 class="title-slider">The Courageous Bear</h1>
-                  <p class="description">
-                    Fusce dapibus, tellus ac cursus commodo, tortor mauris
-                    condimentum nibh, ut fermentum massa justo sit amet risus.
-                  </p>
-                </div>
-                <div class="product" product-id="3" product-color="#A5AAAE">
-                  <div class="thumbnail">
-                    <img
-                      src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/169963/Mouse.svg"
-                    />
-                  </div>
-                  <h1 class="title-slider">The Sneaky Mouse</h1>
-                  <p class="description">
-                    Fusce dapibus, tellus ac cursus commodo, tortor mauris
-                    condimentum nibh, ut fermentum massa justo sit amet risus.
-                  </p>
-                </div>
-                <div class="product" product-id="4" product-color="#ED8D1F">
-                  <div class="thumbnail">
-                    <img
-                      src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/169963/Fox.svg"
-                    />
-                  </div>
-                  <h1 class="title-slider">The Cunning Fox</h1>
-                  <p class="description">
-                    Fusce dapibus, tellus ac cursus commodo, tortor mauris
-                    condimentum nibh, ut fermentum massa justo sit amet risus.
-                  </p>
-                </div>
-                <div class="product" product-id="5" product-color="#C4C8CB">
-                  <div class="thumbnail">
-                    <img
-                      src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/169963/Rabbit.svg"
-                    />
-                  </div>
-                  <h1 class="title-slider">The Jumpy Rabbit</h1>
-                  <p class="description">
-                    Fusce dapibus, tellus ac cursus commodo, tortor mauris
-                    condimentum nibh, ut fermentum massa justo sit amet risus.
-                  </p>
-                </div>
-              -->
-            </div>
-            <div class="footer-slider">
-              <a
-                class="btn-slider"
-                id="prev"
-                href="#"
-                ripple=""
-                ripple-color="#666666"
-                >Prev</a
-              ><a
-                class="btn-slider"
-                id="next"
-                href="#"
-                ripple=""
-                ripple-color="#666666"
-                >Next</a
-              >
-            </div>
-          </div>
-        </section>
+        <div class="footer-slider">
+          <a
+            class="btn-slider"
+            id="prev"
+            href="#"
+            ripple=""
+            ripple-color="#666666"
+            >Prev</a
+          ><a
+            class="btn-slider"
+            id="next"
+            href="#"
+            ripple=""
+            ripple-color="#666666"
+            >Next</a
+          >
+        </div>
+      </div>
       </div>
     </main>
     <footer id="main-footer">Copyright &copy; 2018</footer>
 
-    <script src="js/main.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-    <script src="js/expand.js"></script>
+    <script src="js/info-card-slider.js"></script>
+    <script src="js/main.js"></script>
   </body>
 </html>
