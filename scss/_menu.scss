@@ -23,7 +23,6 @@
     transform: rotate(180deg);
 
     .btn-line {
-
       // Line 1 - Rotate
       &:nth-child(1) {
         transform: rotate(45deg) translate(5px, 5px);
@@ -109,7 +108,7 @@
       transform: translate3d(0, 0, 0);
     }
 
-    &.current>a {
+    &.current > a {
       color: $secondary-color;
     }
   }
@@ -132,7 +131,7 @@
 }
 
 // Delay each nav item slide by 0.1s
-@for $x from 1 through 4 {
+@for $x from 1 through 6 {
   .nav-item:nth-child(#{$x}) {
     transition-delay: $x * 0.1s;
   }
